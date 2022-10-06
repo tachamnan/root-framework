@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.1 (Python 3.9.4 on win32)" generated="20220930 23:36:06.563" rpa="false" schemaversion="2">
+<suite id="s1" name="Update Api Request" source="D:\Les5\9test\structure_api_testing\testcases\update_api_request.robot">
+<test id="s1-t1" name="TC004 Update data api">
+<kw name="UPDATE API Request" library="keyword">
+<arg>13</arg>
+<arg>kanan</arg>
+<arg>090 989 098</arg>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${headers}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220930 23:36:06.842" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20220930 23:36:06.842" endtime="20220930 23:36:06.857"/>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<var>${body}</var>
+<arg>{</arg>
+<arg>"name":"${name}",</arg>
+<arg>"phone":"${phone}"</arg>
+<arg>}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20220930 23:36:06.857" level="INFO">${body} = { "name":"kanan", "phone":"090 989 098" }</msg>
+<status status="PASS" starttime="20220930 23:36:06.857" endtime="20220930 23:36:06.857"/>
+</kw>
+<kw name="Update Request" library="command">
+<var>${response}</var>
+<arg>${base_url}</arg>
+<arg>${staff}/${id}</arg>
+<arg>${body}</arg>
+<arg>${headers}</arg>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>myupdate</arg>
+<arg>${url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220930 23:36:06.857" level="INFO">Creating Session using : alias=myupdate, url=http://localhost:3000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220930 23:36:06.857" endtime="20220930 23:36:06.857"/>
+</kw>
+<kw name="Put On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>myupdate</arg>
+<arg>${path}</arg>
+<arg>data=${body}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<msg timestamp="20220930 23:36:08.925" level="INFO">PUT Request : url=http://localhost:3000/staff/13 
+ path_url=/staff/13 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '41'} 
+ body={ "name":"kanan", "phone":"090 989 098" } 
+ </msg>
+<msg timestamp="20220930 23:36:08.925" level="INFO">PUT Response : url=http://localhost:3000/staff/13 
+ status=200, reason=OK 
+ headers={'X-Powered-By': 'Express', 'Vary': 'Origin, Accept-Encoding', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Expires': '-1', 'X-Content-Type-Options': 'nosniff', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '59', 'ETag': 'W/"3b-roqmNLMOMPk750bgDofuqd+9Lyw"', 'Date': 'Fri, 30 Sep 2022 16:36:08 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body={
+  "name": "kanan",
+  "phone": "090 989 098",
+  "id": 13
+} 
+ </msg>
+<msg timestamp="20220930 23:36:08.925" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220930 23:36:06.857" endtime="20220930 23:36:08.925"/>
+</kw>
+<msg timestamp="20220930 23:36:08.927" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220930 23:36:06.857" endtime="20220930 23:36:08.927"/>
+</kw>
+<status status="PASS" starttime="20220930 23:36:06.842" endtime="20220930 23:36:08.927"/>
+</kw>
+<status status="PASS" starttime="20220930 23:36:06.842" endtime="20220930 23:36:08.929"/>
+</test>
+<status status="PASS" starttime="20220930 23:36:06.563" endtime="20220930 23:36:08.932"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Update Api Request">Update Api Request</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

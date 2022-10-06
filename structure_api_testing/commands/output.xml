@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.1 (Python 3.9.4 on win32)" generated="20220930 09:33:05.051" rpa="false" schemaversion="2">
+<suite id="s1" name="Command" source="D:\Les5\9test\structure_api_testing\commands\command.robot">
+<test id="s1-t1" name="My TC001 api_get">
+<kw name="Get Request">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>myget</arg>
+<arg>${base_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220930 09:33:05.498" level="INFO">Creating Session using : alias=myget, url=http://localhost:3000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220930 09:33:05.498" endtime="20220930 09:33:05.498"/>
+</kw>
+<kw name="Get On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>myget</arg>
+<arg>${staff}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20220930 09:33:07.596" level="INFO">GET Request : url=http://localhost:3000/staff 
+ path_url=/staff 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220930 09:33:07.597" level="INFO">GET Response : url=http://localhost:3000/staff 
+ status=200, reason=OK 
+ headers={'X-Powered-By': 'Express', 'Vary': 'Origin, Accept-Encoding', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Expires': '-1', 'X-Content-Type-Options': 'nosniff', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '499', 'ETag': 'W/"1f3-AUv8ZadXfIUbCudOBfssTloGlPA"', 'Date': 'Fri, 30 Sep 2022 02:33:07 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body=[
+  {
+    "name": "John",
+    "phone": "010 209 999",
+    "id": 4
+  },
+  {
+    "name": "nita2",
+    "phone": "010 209 999",
+    "id": 5
+  },
+  {
+    "name": "Amuy",
+    "phone": "090 988 899",
+    "id": 8
+  },
+  {
+    "name": "amey",
+    "phone": "090 988 899",
+    "id": 9
+  },
+  {
+    "name": "lata",
+    "phone": "090 987 8943",
+    "id": 10
+  },
+  {
+    "name": "Latana",
+    "phone": "090 897 900",
+    "id": 11
+  },
+  {
+    "name": "chanUpdated",
+    "phone": "098 909 000",
+    "id": 12
+  }
+] 
+ </msg>
+<msg timestamp="20220930 09:33:07.598" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220930 09:33:05.498" endtime="20220930 09:33:07.598"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220930 09:33:07.598" endtime="20220930 09:33:07.611"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220930 09:33:07.611" endtime="20220930 09:33:07.634"/>
+</kw>
+<status status="PASS" starttime="20220930 09:33:05.498" endtime="20220930 09:33:07.634"/>
+</kw>
+<status status="PASS" starttime="20220930 09:33:05.498" endtime="20220930 09:33:07.661"/>
+</test>
+<status status="PASS" starttime="20220930 09:33:05.051" endtime="20220930 09:33:07.665"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Command">Command</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

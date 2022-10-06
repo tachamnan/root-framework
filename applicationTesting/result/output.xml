@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.1 (Python 3.9.4 on win32)" generated="20220921 10:10:36.145" rpa="false" schemaversion="2">
+<suite id="s1" name="Facebook" source="D:\Les5\9test\applicationTesting\facebook.robot">
+<test id="s1-t1" name="Login into facebook">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${url}</arg>
+<arg>ff</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220921 10:10:36.308" level="INFO">Opening browser 'ff' to base url 'https://web.facebook.com/?_rdc=1&amp;_rdr'.</msg>
+<msg timestamp="20220921 10:10:36.319" level="INFO">Firefox driver log is always forced to to: D:\Les5\9test\applicationTesting\result\geckodriver-1.log</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220921 10:10:41.596" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<status status="PASS" starttime="20220921 10:10:41.595" endtime="20220921 10:10:41.596"/>
+</kw>
+<msg timestamp="20220921 10:10:41.607" level="FAIL">WebDriverException: Message: Process unexpectedly closed with status 0
+</msg>
+<status status="FAIL" starttime="20220921 10:10:36.307" endtime="20220921 10:10:41.607"/>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" starttime="20220921 10:10:41.608" endtime="20220921 10:10:41.608"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20220921 10:10:41.608" endtime="20220921 10:10:41.608"/>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" starttime="20220921 10:10:41.608" endtime="20220921 10:10:41.608"/>
+</kw>
+<status status="FAIL" starttime="20220921 10:10:36.307" endtime="20220921 10:10:41.608">WebDriverException: Message: Process unexpectedly closed with status 0
+</status>
+</test>
+<status status="FAIL" starttime="20220921 10:10:36.147" endtime="20220921 10:10:41.610"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Facebook">Facebook</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
